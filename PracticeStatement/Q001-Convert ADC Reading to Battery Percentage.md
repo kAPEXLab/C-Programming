@@ -1,95 +1,48 @@
-# Title: Two-Point Calibration Map (Overflow‑Safe, Rounding, Clamping)
+# Title: Convert ADC Reading to Battery Percentage
 
-### Level: Difficult  
+**Level:**: Easy
 
-### Concepts: Variables & Data Types  
+**Concepts:** Variables & Data Types
 
----  
+## Scenario
+A handheld tester reads battery voltage via an ADC. You need to compute a percentage (0–100%) from the raw ADC count. The ADC’s full‑scale count can vary by hardware version.
 
-## Scenario  
-A temperature sensor is calibrated at two points: (x₁ → y₁) and (x₂ → y₂).  
-Given a new raw reading **x**, compute the calibrated output **y** using a linear map.  
-The implementation must avoid overflow during slope calculation, support optional clamping to a physical range, and use only integer arithmetic.
+## Problem Statement
+Write a function that converts a raw ADC reading to a battery‑percentage using integer arithmetic only.
 
----  
+## Requirements
+- **Inputs:** `adc` (current count), `adc_max` (maximum valid count).  
+- Use integer arithmetic; avoid floating point.  
+- Use overflow‑safe intermediate (`long`) for multiply.  
+- Perform round‑to‑nearest during percentage calculation.  
+- Clamp result to `[0, 100]`.  
+- Treat invalid inputs as errors (`adc_max <= 0` or `adc < 0` or `adc > adc_max`).
 
-## Problem Statement  
-Implement an integer‑only linear interpolation function that maps a raw sensor value to a calibrated output while handling rounding, overflow safety, optional clamping, and full argument validation.
+## Function Details
+- **Name:** `adc_to_percent`  
+- **Arguments:**  
+  - `int adc` — Raw ADC count.  
+  - `int adc_max` — Maximum ADC count for the hardware (e.g., 1023, 4095).  
+  - `int *out_percent` — Output pointer for the result (0–100).  
+- **Return Value:** `int` — `0` on success; `-1` on invalid inputs or null pointer.  
+- **Description:** Compute `percent = round((adc * 100) / adc_max)` using `long` for the product. Clamp to `[0, 100]`. Return an error if inputs are invalid or `out_percent` is `NULL`.
 
----  
+## Solution Approach
+*(Use integer arithmetic with a `long` intermediate, add `adc_max/2` for rounding, then clamp the result.)*
 
-## Requirements  
+## Tasks to Perform
+- Validate input arguments.  
+- Perform the integer calculation with proper rounding.  
+- Clamp the result to the range 0‑100.  
+- Store the result via `out_percent`.  
 
-- Use only `int`, `long`, and `bool`.  
-- Inputs: `x`, `x1`, `y1`, `x2`, `y2`, optional clamping bounds `[y_min, y_max]`.  
-- If `x1 == x2`, the calibration is degenerate → return an error.  
-- Compute `y = y1 + (x - x1) * (y2 - y1) / (x2 - x1)` with all intermediate products performed in `long` to avoid overflow.  
-- Apply **round‑to‑nearest** (add/subtract half the divisor before division).  
-- When `clamp == true`, clamp the final `y` to the range `[y_min, y_max]`.  
-- Validate pointers and all arguments; on error do **not** modify `*out_y`.  
-
----  
-
-## Function Details  
-
-**Name:** `calib_map_linear`  
-
-**Arguments:**  
-- `int x` – New raw reading.  
-- `int x1, int y1, int x2, int y2` – Calibration points.  
-- `bool clamp` – Enable clamping.  
-- `int y_min, int y_max` – Valid only when `clamp` is `true`.  
-- `int *out_y` – Output pointer for the mapped result.  
-
-**Return Value:**  
-- `int` – `0` on success; `-1` on invalid arguments (null pointer, degenerate calibration, bad clamping range, etc.).  
-
-**Description:**  
-The function performs integer linear interpolation with overflow‑safe `long` intermediates, rounds the result to the nearest integer, optionally clamps it, and stores the outcome through `out_y`. If any validation fails, the function returns `-1` and leaves `*out_y` unchanged.
-
----  
-
-## Solution Approach  
-
-1. **Validate arguments** – check for `NULL` `out_y`, ensure `x1 != x2`, verify clamping bounds when `clamp` is true, etc.  
-2. **Compute numerator and denominator** using `long`:  
-
-   ```
-   long num = (long)(x - x1) * (long)(y2 - y1);
-   long den = (long)(x2 - x1);
-   ```  
-
-3. **Round to nearest**:  
-
-   - If `num >= 0`, `long term = (num + den/2) / den;`  
-   - Else, `long term = (num - den/2) / den;`  
-
-4. **Add offset**: `long y_long = (long)y1 + term;`  
-
-5. **Clamp (if requested)**: limit `y_long` to `[y_min, y_max]`.  
-
-6. **Store result**: `*out_y = (int) y_long;` and return `0`.  
-
----  
-
-## Tasks to Perform  
-
-1. Implement `calib_map_linear` following the solution steps above.  
-2. Ensure all arithmetic uses only `int`, `long`, and `bool`.  
-3. Provide thorough unit tests covering normal mapping, rounding, clamping, extrapolation, degenerate calibration, and invalid pointer cases.  
-
----  
-
-## Test Cases (≥5)  
-
-| # | Inputs / Pre‑condition                                                                                              | Expected Output                               | Notes |
-|---|----------------------------------------------------------------------------------------------------------------------|-----------------------------------------------|-------|
-| 1 | `x=75`, `(x1=50,y1=0)`, `(x2=100,y2=100)`, `clamp=false`                                                            | `ret=0`, `*out=50`                            | Midpoint maps to 50 |
-| 2 | `x=100`, `(50→0, 100→100)`, `clamp=false`                                                                            | `ret=0`, `*out=100`                           | Exact endpoint |
-| 3 | `x=120`, `(50→0, 100→100)`, `clamp=true`, `y_min=0`, `y_max=100`                                                     | `ret=0`, `*out=100`                           | Clamped high |
-| 4 | `x=40`, `(50→0, 100→100)`, `clamp=true`, `y_min=0`, `y_max=100`                                                      | `ret=0`, `*out=0`                             | Clamped low |
-| 5 | `x=60`, `(x1=100,y1=200)`, `(x2=200,y2=400)`, `clamp=false`                                                          | `ret=0`, `*out=120`                           | Extrapolation (200 + (-40*200)/100 = 120) |
-| 6 | `x=10`, `(x1=10,y1=500)`, `(x2=10,y2=900)`                                                                            | `ret=-1`                                      | Degenerate calibration (`x1==x2`) |
-| 7 | `out_y = NULL`, any valid numeric arguments                                                                          | `ret=-1`                                      | Invalid pointer |
-
----
+## Test Cases
+| # | `adc` | `adc_max` | Expected Return | Expected `*out_percent` | Notes |
+|---|-------|-----------|-----------------|--------------------------|-------|
+| 1 | 0     | 4095      | 0               | 0                        | Lower bound |
+| 2 | 4095  | 4095      | 0               | 100                      | Upper bound |
+| 3 | 2048  | 4095      | 0               | 50                       | Mid‑scale (rounded) |
+| 4 | 1023  | 1023      | 0               | 100                      | Edge when `adc = adc_max` |
+| 5 | 1100  | 1023      | -1              | —                        | Invalid: `adc > adc_max` |
+| 6 | 500   | 0         | -1              | —                        | Invalid: division by zero |
+| 7 | 205   | 4095      | 0               | 5                        | Rounding check |
