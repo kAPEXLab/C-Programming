@@ -9,19 +9,19 @@ Click any topic or question to view it.
 - [Q4 — Enum State Machine Security](../Question-Bank/01-variables-and-enums/Q4-Enum-State-Machine-Security.md)
 
 ## 02 — Operators and Expressions
-- ../Question-Bank/02-operators-and-expressions/Q1-Fuel-Economy-Calculator.md
+- [Q1-Fuel-Economy-Calculator](../Question-Bank/02-operators-and-expressions/Q1-Fuel-Economy-Calculator.md)
 - [Q2 — ShortCircuit Stream Consume](../Question-Bank/02-operators-and-expressions/Q2-ShortCircuit-Stream-Consume.md)
 
 ## 03 — Control Flow
 - [Q1 — Water Pump Controller](../Question-Bank/03-control-flow/Q1-Water-Pump-Controller.md)
 - [Q2 — Admission Control if-else](../Question-Bank/03-control-flow/Q2-Admission-Control-if-else.md)
-- ../Question-Bank/03-control-flow/Q3-UART-Command-Switch.md
+- [Q3-UART-Command-Switch](../Question-Bank/03-control-flow/Q3-UART-Command-Switch.md)
 
 ## 04 — Loops
 - [Q1 — For Count Above Threshold](../Question-Bank/04-loops/Q1-For-Count-Above-Threshold.md)
 - [Q2 — For RingBuffer Drain](../Question-Bank/04-loops/Q2-For-RingBuffer-Drain.md)
 - [Q3 — While Stream Parser](../Question-Bank/04-loops/Q3-While-Stream-Parser.md)
-- ../Question-Bank/04-loops/Q4-DoWhile-Stability-Detector.md
+- [Q4-DoWhile-Stability-Detector](../Question-Bank/04-loops/Q4-DoWhile-Stability-Detector.md)
 
 ## 05 — Arrays and Strings
 - [Q1 — 1D Min Finder](../Question-Bank/05-arrays-and-strings/Q1-1D-Min-Finder.md)
