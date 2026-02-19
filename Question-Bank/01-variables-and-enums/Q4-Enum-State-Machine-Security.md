@@ -1,4 +1,4 @@
-# Title: Smart Door Lock State Machine with Enums and Guards  
+# Smart Door Lock State Machine with Enums and Guards  
 
 **Level:** Difficult  
 **Concepts:** Enums, State Machines, Guard Conditions, Counters  
@@ -184,4 +184,5 @@ output parameters.
    *Input*: `curr = (enum LockState)99`, `ev = EV_LOCK_CMD`,
    `battery_low = false`, `attempts = 0`,
    any valid pointer arguments.  
+
    *Expected*: return -1, no modification of output parameters.
