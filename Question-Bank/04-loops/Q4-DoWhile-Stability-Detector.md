@@ -1,4 +1,4 @@
-## Detect Stable Sensor Readings Using `do-while` (must process at least one sample)
+## Detect Stable Sensor Readings Using `do-while`
 
 **Title:** Stability Detection with Minimum Consecutive Samples (Using `do-while`)  
 **Level:** Difficult  
@@ -150,5 +150,6 @@ Report whether stability was found, how many samples were examined, and the end 
 | 9  | `n=0` with `start=0`                                                        | `ret=-1`                                                  | Empty array invalid with given `start`                                      |
 | 10 | `start=5` with `n=4`                                                        | `ret=-1`                                                  | Start out of range                                                          |
 | 11 | `delta=-1` or `k_consecutive<1` or `max_to_check<1`                         | `ret=-1`                                                  | Invalid parameters                                                          |
+
 
 ***
