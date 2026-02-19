@@ -94,7 +94,8 @@
     <!-- Main: 20% index (left) + 80% content (right) -->
     <div class="main">
       <aside class="qb-index">
-        {% include qb-index.html %}
+        {% capture sidebar %}{% include_relative question-bank.md %}{% endcapture %}
+        {{ sidebar | markdownify }}
       </aside>
       <main class="content">
         {{ content }}
