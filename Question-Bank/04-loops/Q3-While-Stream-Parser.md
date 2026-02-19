@@ -1,4 +1,4 @@
-# Parse Records from a Byte Stream Until Delimiter or Limits (using `while` loop)
+# Parse Records from a Byte Stream Until Delimiter or Limits
 
 **Title:** Stream Parser with Delimiter, Field Length Limit, and Timeout (While Loop)  
 **Level:** Difficult  
@@ -142,5 +142,6 @@ enum ParseStatus {
 | 7 | `in="PARTIAL", n=7, *index=0, delim='\n', out_cap=8, max_scan=100`     | `ret=0, status=PARSE_PARTIAL_NO_DELIM, out="PARTIAL", out_len=7, *index=7` | Reached end with partial record                                 |
 | 8 | `index=NULL` or `out=NULL` or `out_status=NULL`                        | `ret=-1`                                                                   | Invalid pointers                                                |
 | 9 | `n=-1` or `out_capacity<=0` or `max_scan<0` or `*index>n`              | `ret=-1`                                                                   | Invalid parameters                                              |
+
 
 ***
