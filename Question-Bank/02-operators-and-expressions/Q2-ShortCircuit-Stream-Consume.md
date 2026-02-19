@@ -1,4 +1,4 @@
-# Title: Safe Stream Consumption Using Short‑Circuit Side Effects
+# Safe Stream Consumption Using Short‑Circuit Side Effects
 
 **Level:** Difficult  
 **Concepts:** Operator precedence, short‑circuit evaluation, side‑effects, pointer handling  
@@ -94,4 +94,5 @@ Write a function that safely consumes elements from an integer array according t
 | 5 | `a = [1,100,2]`, `n = 3`, `*index = 0`, `threshold = 50`, `limit = 5`                                             | `ret = 0`, `*out_sum = 1`, `*out_count = 1`, `*index = 1`                                                                                                            | Stops when next value `100` is not `< 50 |
 | 6 | `a = [1,2,3]`, `n = 3`, `*index = 0`, `threshold = 5`, `limit = 0`                                                | `ret = 0`, `*out_sum = 0`, `*out_count = 0`, `*index = 0`                                                                                                            | Zero limit – consume none |
 | 7 | `a = NULL`, any other parameters any valid values                                                                      | `ret = -1` (invalid pointer)                                                                                                                                          | No modifications of outputs |
+
 | 8 | `a = [1]`, `n = -1`, `*index = 0`, `threshold = 5`, `limit = 1`                                                    | `ret = -1` (invalid length)                                                                                                                                           | No modifications of outputs |
