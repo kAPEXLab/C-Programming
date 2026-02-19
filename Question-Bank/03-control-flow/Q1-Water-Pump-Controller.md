@@ -101,13 +101,14 @@ Implement a function that computes the **next pump command** (start/stop) using 
 
 | #  | Inputs / Precondition                                                                                 | Expected Output     | Notes                                      |
 | -- | ----------------------------------------------------------------------------------------------------- | ------------------- | ------------------------------------------ |
-| 1  | `level_pct=15, pump_running=false, manual_on=false, manual_off=false, leak=false, overcurrent=false`  | `ret=0, *out_cmd=1` | Below ON threshold → START                 |
-| 2  | `level_pct=85, pump_running=true, manual_on=false, manual_off=false, leak=false, overcurrent=false`   | `ret=0, *out_cmd=0` | Above OFF threshold → STOP                 |
-| 3  | `level_pct=50, pump_running=true, manual_on=false, manual_off=false, leak=false, overcurrent=false`   | `ret=0, *out_cmd=1` | Mid-band → hold current (running)          |
-| 4  | `level_pct=50, pump_running=false, manual_on=false, manual_off=false, leak=false, overcurrent=false`  | `ret=0, *out_cmd=0` | Mid-band → hold current (stopped)          |
-| 5  | `level_pct=40, pump_running=false, manual_on=true, manual_off=false, leak=false, overcurrent=false`   | `ret=0, *out_cmd=1` | Manual ON overrides mid-band               |
-| 6  | `level_pct=10, pump_running=true, manual_on=false, manual_off=true, leak=false, overcurrent=false`    | `ret=0, *out_cmd=0` | Manual OFF overrides low level             |
-| 7  | `level_pct=70, pump_running=true, manual_on=false, manual_off=false, leak=true, overcurrent=false`    | `ret=0, *out_cmd=0` | Safety fault forces STOP                   |
-| 8  | `level_pct=120, pump_running=false, manual_on=false, manual_off=false, leak=false, overcurrent=false` | `ret=0, *out_cmd=0` | Level clamped to 100 → STOP via hysteresis |
-| 9  | `level_pct=-5, pump_running=false, manual_on=false, manual_off=false, leak=false, overcurrent=false`  | `ret=0, *out_cmd=1` | Level clamped to 0 → START via hysteresis  |
+| 1  | `level_pct=15`, `pump_running=false`, `manual_on=false`, `manual_off=false`, `leak=false, overcurrent=false`  | `ret=0`, `*out_cmd=1` | Below ON threshold → START                 |
+| 2  | `level_pct=85`, `pump_running=true`, `manual_on=false`, `manual_off=false`, `leak=false`, `overcurrent=false`   | `ret=0, *out_cmd=0` | Above OFF threshold → STOP                 |
+| 3  | `level_pct=50`, `pump_running=true`, `manual_on=false`, `manual_off=false`, `leak=false`, `overcurrent=false`   | `ret=0, *out_cmd=1` | Mid-band → hold current (running)          |
+| 4  | `level_pct=50`, `pump_running=false`, `manual_on=false`, `manual_off=false`, `leak=false`, `overcurrent=false`  | `ret=0, *out_cmd=0` | Mid-band → hold current (stopped)          |
+| 5  | `level_pct=40`, `pump_running=false`, `manual_on=true`, `manual_off=false`, `leak=false`, `overcurrent=false`   | `ret=0, *out_cmd=1` | Manual ON overrides mid-band               |
+| 6  | `level_pct=10`, `pump_running=true`, `manual_on=false`, `manual_off=true`, `leak=false`, `overcurrent=false`    | `ret=0, *out_cmd=0` | Manual OFF overrides low level             |
+| 7  | `level_pct=70`, `pump_running=true`, `manual_on=false`, `manual_off=false`, `leak=true`, `overcurrent=false`    | `ret=0, *out_cmd=0` | Safety fault forces STOP                   |
+| 8  | `level_pct=120`, `pump_running=false`, `manual_on=false`, `manual_off=false`, `leak=false`, `overcurrent=false` | `ret=0, *out_cmd=0` | Level clamped to 100 → STOP via hysteresis |
+| 9  | `level_pct=-5`, `pump_running=false`, `manual_on=false`, `manual_off=false`, `leak=false`, `overcurrent=false`  | `ret=0, *out_cmd=1` | Level clamped to 0 → START via hysteresis  |
 | 10 | `out_cmd=NULL`                                                                                        | `ret=-1`            | Invalid pointer (no output written)        |
+
