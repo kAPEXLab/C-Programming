@@ -1,30 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title }} | {{ site.title }}</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.title | escape }} | {{ site.title | default: "KPIT APEX Lab" }}</title>
 
-  <!-- Load theme CSS -->
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {%- comment -%}
+    Keep the theme CSS from the current Pages theme (orderedlist/minimal/etc.).
+    If you’re using jekyll-theme-minimal in _config.yml, GitHub Pages will inject
+    the theme CSS. We add our own lightweight CSS to control the layout.
+  {%- endcomment -%}
+
+  <style>
+    :root{
+      --sidebar-w: 20vw;      /* ~20% of viewport width for index */
+      --content-w: 80vw;      /* remaining width for question content */
+      --max-page-w: 1200px;   /* overall max width cap (optional) */
+    }
+    body{ margin:0; }
+    .container{
+      display:grid;
+      grid-template-rows:auto 1fr;
+      min-height:100vh;
+    }
+    header.site-header{
+      border-bottom:1px solid #e5e7eb;
+      padding:16px 20px;
+      display:flex;
+      align-items:center;
+      gap:16px;
+    }
+    header.site-header h1{
+      font-size:1.4rem;
+      margin:0;
+      letter-spacing:.2px;
+    }
+    header.site-header nav a{
+      color:#0366d6;
+      text-decoration:none;
+      font-weight:600;
+      margin-left:8px;
+    }
+    .main{
+      display:grid;
+      grid-template-columns: minmax(220px, var(--sidebar-w)) 1fr; /* 20% / 80% */
+      column-gap:24px;
+      max-width:var(--max-page-w);
+      margin:0 auto;
+      padding:20px;
+      width:100%;
+      box-sizing:border-box;
+    }
+    aside.qb-index{
+      border-right:1px solid #e5e7eb;
+      padding-right:16px;
+      position:sticky;
+      top:0;
+      align-self:start;
+      max-height:calc(100vh - 70px);
+      overflow:auto;
+    }
+    aside.qb-index h2{
+      font-size:1rem; margin:.2rem 0 .6rem 0;
+    }
+    .content{
+      min-width:0;             /* avoid overflow on long code lines */
+    }
+
+    /* Optional: hide index when requested by page front matter */
+    .no-index .main{
+      grid-template-columns: 1fr;
+    }
+    .no-index aside.qb-index{
+      display:none;
+    }
+
+    /* Make tables and code blocks friendlier */
+    .content pre{ overflow:auto; background:#f6f8fa; padding:12px; border-radius:6px; }
+    .content table{ width:100%; border-collapse:collapse; }
+    .content th, .content td{ border:1px solid #e5e7eb; padding:6px 8px; }
+  </style>
 </head>
-
-<body>
-
-  <div class="wrapper">
-
-    <!-- REMOVE GitHub project link completely -->
-    <!-- Custom header -->
-   <header>
+<body class="{% if page.hide_index %}no-index{% endif %}">
+  <div class="container">
+    <!-- Header: KPIT APEX Lab + Home link -->
+    <header class="site-header">
       <h1>KPIT APEX Lab</h1>
-   </header>
+      <nav>
+        <a href="{{ site.baseurl | default: '/C-Programming' }}/">Home</a>
+      </nav>
+    </header>
 
-    <section>
-      {{ content }}
-    </section>
-
+    <!-- Main: 20% index (left) + 80% content (right) -->
+    <div class="main">
+      <aside class="qb-index">
+        {% include qb-index.html %}
+      </aside>
+      <main class="content">
+        {{ content }}
+      </main>
+    </div>
   </div>
-
 </body>
 </html>
