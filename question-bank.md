@@ -2,13 +2,13 @@
 
 Click any topic or question to view it.
 
-### 01 - Variables and Enums
+**01 - Variables and Enums**
 - [Q1 - ADC Temp Conversion](Question-Bank/01-variables-and-enums/Q1-ADC-Temp-Conversion.md)
 - [Q2 - Two Point Calibration Map](Question-Bank/01-variables-and-enums/Q2-Two-Point-Calibration-Map.md)
 - [Q3 - Map Operating Mode to CPU Frequency](Question-Bank/01-variables-and-enums/Q3-Map-Operating-Mode-to-CPU-Frequency.md)
 - [Q4 - Enum State Machine Security](Question-Bank/01-variables-and-enums/Q4-Enum-State-Machine-Security.md)
 
-### 02 - Operators and Expressions
+**02 - Operators and Expressions**
 - [Q1-Fuel-Economy-Calculator](Question-Bank/02-operators-and-expressions/Q1-Fuel-Economy-Calculator.md)
 - [Q2 - ShortCircuit Stream Consume](Question-Bank/02-operators-and-expressions/Q2-ShortCircuit-Stream-Consume.md)
 
