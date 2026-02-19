@@ -1,4 +1,4 @@
-# Longest “Stable” Segment in a 1D Integer Array (multi-constraint, tie‑breakers)
+# Longest “Stable” Segment in a 1D Integer Array
 
 **Title:** Longest Stable Segment with Step, Span, Average & Length Constraints  
 **Level:** Difficult  
@@ -146,3 +146,4 @@ Given an integer array `a` of length `n`, find a **contiguous** segment `[L..R]`
 | 7 | `a=[], n=0, step_max=1, span_max=1, avg_min=0.0, avg_max=1.0, min_len=1, max_len=0`                    | `ret=-2`                                  | No data                                                                                                                                                                                                                                                                                        |
 | 8 | `a=NULL` (any other valid params)                                                                      | `ret=-1`                                  | Invalid pointer                                                                                                                                                                                                                                                                                |
 | 9 | `min_len=0` or `avg_min>avg_max` or `max_len>0 && max_len<min_len`                                     | `ret=-1`                                  | Invalid parameters                                                                                                                                                                                                                                                                             |
+
