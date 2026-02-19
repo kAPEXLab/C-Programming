@@ -102,3 +102,54 @@
     }
     .no-index aside.qb-index{
       display: none;
+    }
+
+    /* Basic responsiveness */
+    @media (max-width: 900px){
+      :root{ --sidebar-w: 28vw; }
+    }
+    @media (max-width: 720px){
+      .main{
+        grid-template-columns: 1fr; /* stack on small screens */
+      }
+      aside.qb-index{
+        display: none;              /* hide index on very small screens */
+      }
+    }
+  </style>
+</head>
+
+<!-- Add class 'no-index' when page front matter sets hide_index: true -->
+<body class="{% if page.hide_index %}no-index{% endif %}">
+  <div class="container">
+
+    <!-- Header: KPIT APEX Lab + Home link -->
+    <header class="site-header">
+      <h1>KPIT APEX Lab</h1>
+      <nav>
+        <a href="{{ site.baseurl | default: '/C-Programming' }}/">Home</a>
+      </nav>
+    </header>
+
+    <!-- Main: Left = Index (20%), Right = Content (80%) -->
+    <div class="main">
+
+      <!-- Sidebar: render from the single source /question-bank.md -->
+      <aside class="qb-index">
+        {% assign qb = site.pages | where: "path", "question-bank.md" | first %}
+        {% if qb %}
+          {{ qb.content | markdownify }}
+        {% else %}
+          <p><em>Question index not found. Ensure <code>question-bank.md</code> exists at repository root.</em></p>
+        {% endif %}
+      </aside>
+
+      <!-- Content area: the current page/question -->
+      <main class="content">
+        {{ content }}
+      </main>
+
+    </div>
+  </div>
+</body>
+</html>
