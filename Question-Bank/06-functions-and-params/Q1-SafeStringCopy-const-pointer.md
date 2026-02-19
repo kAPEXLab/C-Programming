@@ -1,4 +1,4 @@
-# Safe Bounded Copy from Read-Only String (with Optional Case Transform)
+# Safe Bounded Copy from Read-Only String
 
 **Title:** Safe String Copy Using `const char*` (Optional Lowercase Transform)  
 **Level:** Easy  
@@ -77,5 +77,6 @@ Implement a function that copies from `src` (read-only) to `dst` with a capacity
 | 5 | `src="ABC", dst_cap=0`                        | `ret=0, copied=0, truncated=true`               | No space to write; compute truncation |
 | 6 | `src=NULL` or `dst=NULL`                      | `ret=-1`                                        | Invalid pointers                      |
 | 7 | `dst_cap=-1`                                  | `ret=-1`                                        | Invalid capacity                      |
+
 
 ***
