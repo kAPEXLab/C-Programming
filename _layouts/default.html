@@ -137,11 +137,17 @@
 
     <!-- Header: KPIT APEX Lab + Home link -->
     <header class="site-header">
-      <h1>KPIT APEX Lab</h1>
+      <a href="{{ site.baseurl | default: '/' }}">
+        <img src="{{ site.baseurl | default: '' }}/assets/img/APEXlabheader.png"
+             alt="KPIT APEX Lab Logo"
+             style="height:48px; width:auto; vertical-align:middle;">
+      </a>
+    
       <nav>
-        <a href="{{ site.baseurl | default: '/C-Programming' }}/">Home</a>
+        <a href="{{ site.baseurl | default: '/' }}">Home</a>
       </nav>
     </header>
+
 
     <!-- Main: Left = Index (20%), Right = Content (80%) -->
     <div class="main">
