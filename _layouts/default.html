@@ -145,8 +145,18 @@
       </aside>
 
       <!-- Content area: the current page/question -->
+      {% assign is_qb_page = false %}
+      {% if page.path == "question-bank.md" or page.url == "/question-bank.html" %}
+        {% assign is_qb_page = true %}
+      {% endif %}
+      
       <main class="content">
-        {{ content }}
+        {% if is_qb_page %}
+          <h1>C Programming</h1>
+          <p>Click any topic or question to view it.</p>
+        {% else %}
+          {{ content }}
+        {% endif %}
       </main>
 
     </div>
