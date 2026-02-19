@@ -6,86 +6,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{{ page.title | escape }} | {{ site.title | default: "KPIT APEX Lab" }}</title>
 
+  <!-- Minimal site styles to control layout. Theme CSS (from your Jekyll theme)
+       will still load automatically via GitHub Pages. -->
   <style>
     :root{
-      --sidebar-w: 20vw;
-      --content-w: 80vw;
-      --max-page-w: 1200px;
+      --sidebar-w: 20vw;        /* ~20% viewport width for index pane */
+      --max-page-w: 1200px;     /* cap overall width (optional) */
+      --gap: 24px;
+      --border: #e5e7eb;
+      --link: #0366d6;
+      --bg-code: #f6f8fa;
     }
-    body{ margin:0; }
+
+    /* Reset & base */
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+
+    /* Page grid: header (auto) + main (1fr) */
     .container{
-      display:grid;
-      grid-template-rows:auto 1fr;
-      min-height:100vh;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      min-height: 100vh;
     }
+
+    /* Header */
     header.site-header{
-      border-bottom:1px solid #e5e7eb;
-      padding:16px 20px;
-      display:flex;
-      align-items:center;
-      gap:16px;
+      border-bottom: 1px solid var(--border);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
     }
     header.site-header h1{
-      font-size:1.4rem;
-      margin:0;
-      letter-spacing:.2px;
+      font-size: 1.25rem;
+      margin: 0;
+      letter-spacing: .2px;
+      font-weight: 700;
     }
     header.site-header nav a{
-      color:#0366d6;
-      text-decoration:none;
-      font-weight:600;
-      margin-left:8px;
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 8px;
     }
+    header.site-header nav a:hover{
+      text-decoration: underline;
+    }
+
+    /* Main 20/80 split */
     .main{
-      display:grid;
+      display: grid;
       grid-template-columns: minmax(220px, var(--sidebar-w)) 1fr; /* 20% / 80% */
-      column-gap:24px;
-      max-width:var(--max-page-w);
-      margin:0 auto;
-      padding:20px;
-      width:100%;
-      box-sizing:border-box;
+      column-gap: var(--gap);
+      max-width: var(--max-page-w);
+      margin: 0 auto;
+      padding: 20px;
+      width: 100%;
     }
+
+    /* Sidebar (index) */
     aside.qb-index{
-      border-right:1px solid #e5e7eb;
-      padding-right:16px;
-      position:sticky;
-      top:0;
-      align-self:start;
-      max-height:calc(100vh - 70px);
-      overflow:auto;
+      border-right: 1px solid var(--border);
+      padding-right: 16px;
+      position: sticky;
+      top: 0;                     /* stays visible while scrolling */
+      align-self: start;
+      max-height: calc(100vh - 70px);
+      overflow: auto;
     }
-    .content{ min-width:0; }
-    .no-index .main{ grid-template-columns: 1fr; }
-    .no-index aside.qb-index{ display:none; }
-    .content pre{ overflow:auto; background:#f6f8fa; padding:12px; border-radius:6px; }
-    .content table{ width:100%; border-collapse:collapse; }
-    .content th, .content td{ border:1px solid #e5e7eb; padding:6px 8px; }
-  </style>
-</head>
-<body class="{% if page.hide_index %}no-index{% endif %}">
-  <div class="container">
-    <header class="site-header">
-      <h1>KPIT APEX Lab</h1>
-      <nav>
-        <a href="{{ site.baseurl | default: '/C-Programming' }}/">Home</a>
-      </nav>
-    </header>
+    aside.qb-index h1,
+    aside.qb-index h2,
+    aside.qb-index h3{ margin-top: 0.6rem; }
 
-    <div class="main">
-      <aside class="qb-index">
-        {% assign qb = site.pages | where: "path", "question-bank.md" | first %}
-        {% if qb %}
-          {{ qb.content | markdownify }}
-        {% else %}
-          <p><em>Question index not found. Ensure <code>question-bank.md</code> exists at repository root.</em></p>
-        {% endif %}
-      </aside>
+    /* Content (question body) */
+    main.content{ min-width: 0; }
+    main.content pre{
+      overflow: auto;
+      background: var(--bg-code);
+      padding: 12px;
+      border-radius: 6px;
+    }
+    main.content table{
+      width: 100%;
+      border-collapse: collapse;
+    }
+    main.content th, main.content td{
+      border: 1px solid var(--border);
+      padding: 6px 8px;
+      vertical-align: top;
+    }
 
-      <main class="content">
-        {{ content }}
-      </main>
-    </div>
-  </div>
-</body>
-</html>
+    /* Hide index when requested by page front matter */
+    .no-index .main{
+      grid-template-columns: 1fr;   /* single column */
+    }
+    .no-index aside.qb-index{
+      display: none;
