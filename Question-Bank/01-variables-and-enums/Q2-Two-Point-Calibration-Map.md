@@ -1,4 +1,4 @@
-# Title: Two‑Point Calibration Map (Overflow‑Safe, Rounding, Clamping) (Difficult)
+# Two‑Point Calibration Map (Overflow‑Safe, Rounding, Clamping)
 
 **Level:** Difficult  
 **Concepts:** Variables & Data Types  
@@ -57,4 +57,5 @@ Implement a function that performs integer linear interpolation (or extrapolatio
 | 4 | `x=40`, same calibration, `clamp=true`, `y_min=0`, `y_max=100` | 0 | 0 | Clamped low |
 | 5 | `x=60`, `x1=100,y1=200`, `x2=200,y2=400`, `clamp=false` | 0 | 120 | Extrapolation (rounded) |
 | 6 | `x=10`, `x1=10,y1=500`, `x2=10,y2=900`, any clamp | -1 | – | Degenerate: `x1 == x2` |
+
 | 7 | `out_y = NULL`, any other valid args | -1 | – | Invalid pointer |
