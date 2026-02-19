@@ -1,4 +1,4 @@
-# Count How Many Readings Exceed a Threshold (Using a Basic `for` Loop)
+# Count How Many Readings Exceed a Threshold
 
 **Title:** Count Values Above Threshold  
 **Level:** Easy  
@@ -82,5 +82,6 @@ Implement a function that counts how many elements in an integer array are **str
 | 5 | `a=NULL`                          | `ret=-1`              | Invalid pointer           |
 | 6 | `out_count=NULL`                  | `ret=-1`              | Invalid output pointer    |
 | 7 | `n=-1`                            | `ret=-1`              | Invalid size              |
+
 
 ***
