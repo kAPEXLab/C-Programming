@@ -1,4 +1,4 @@
-# UART Command Interpreter (switch-case with Guards)
+# UART Command Interpreter
 
 **Title:** Interpret Single-Character UART Commands via `switch` (with Mode & Lock Guards)  
 **Level:** Medium (focus on `switch`)  
@@ -120,3 +120,4 @@ enum Action {
 | 11 | `out_action=NULL`                               | `ret=-1`                          | Invalid pointer                         |
 
 ***
+
