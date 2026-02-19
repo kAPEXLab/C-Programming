@@ -1,4 +1,3 @@
-# C Programming Question Bank
+# C Programming
 
-👉 Browse all questions here:  
-[**Open Question Bank**](question-bank.md)
+👉 Browse all questions here: [**Open Question Bank**](question-bank.md)
