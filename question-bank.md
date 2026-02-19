@@ -1,4 +1,4 @@
-# Question Bank Index
+## Question Bank
 
 Click any topic or question to view it.
 
