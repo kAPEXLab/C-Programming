@@ -1,4 +1,4 @@
-# Word Search in a 2D Character Grid (8‑directional, Obstacles, Case & Wildcards)
+# Word Search in a 2D Character Grid
 
 **Title:** Count Word Occurrences in a 2D Grid with Guards (Strings + 2D Arrays)  
 **Level:** Difficult  
@@ -158,5 +158,6 @@ enum Direction {
 | 8 | Invalid: `rows=0` or `cols=0` or `grid=NULL` or `word=NULL`                                                                          | `ret=-1`                                                             | Do not modify outputs                                                                                                                                                                              |
 
 > **Note:** In your implementation, carefully verify the expected counts by enumerating paths; ensure **no cell reuse** within a single match and obey the `allow_diagonal` flag.
+
 
 ***
