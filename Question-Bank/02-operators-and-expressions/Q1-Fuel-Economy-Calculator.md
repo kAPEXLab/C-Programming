@@ -1,4 +1,4 @@
-# Title: Fuel Economy Calculator (precedence & integer division pitfalls) — Easy  
+# Fuel Economy Calculator
 
 **Level:** Easy  
 **Concepts:** Precedence, Integer vs Floating‑Point Division, Type Conversion  
@@ -95,3 +95,4 @@ The function validates the parameters, performs the floating‑point conversion 
 | 5 | `distance_meters = -10`, `fuel_milliliters = 100`  | `ret = -1`                                   | Invalid negative distance |
 | 6 | `distance_meters = 1000`, `fuel_milliliters = 1000`, `out_kmpl = NULL` | `ret = -1`                                   | Null output pointer |
 | 7 | `distance_meters = 999`, `fuel_milliliters = 1000` | `ret = 0`, `*out_kmpl ≈ 0.999`               | Sub‑km distance; FP correctness |
+
