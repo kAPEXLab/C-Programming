@@ -1,4 +1,4 @@
-# Title: Convert ADC Reading to Battery Percentage
+# Convert ADC Reading to Battery Percentage
 
 **Level:** Easy
 
