@@ -1,4 +1,4 @@
-# Title: Map Operating Mode (enum) to CPU Frequency  
+# Map Operating Mode (enum) to CPU Frequency  
 
 **Level:** Easy  
 **Concepts:** Variables & Data Types  
@@ -78,4 +78,5 @@ Validate that `mode` is one of the defined enumeration values. Retrieve the corr
 | 3 | `mode = MODE_RUN`, `power_save = true`                                    | `24`            | 48 / 2 = 24 (power‑save)           |
 | 4 | `mode = MODE_BOOST`, `power_save = true`                                  | `48`            | 96 / 2 = 48 (power‑save)           |
 | 5 | `mode = (enum Mode)99`, `power_save = false`                              | `-1`            | Invalid enum                      |
+
 | 6 | `mode = MODE_SLEEP`, `power_save = true`                                  | `0`             | Remains zero even with power‑save |
