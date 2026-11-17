@@ -1,0 +1,10 @@
+title: Python Programming Question Bank
+url: https://kapexlab.github.io
+baseurl: /Python-Programming
+markdown: GFM
+
+defaults:
+  - scope:
+      path: Question-Bank
+    values:
+      layout: default
