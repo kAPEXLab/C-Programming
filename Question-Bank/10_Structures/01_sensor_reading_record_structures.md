@@ -1,4 +1,4 @@
-# 25 - Sensor Reading Record - Easy
+# 28 - Sensor Reading Record - Easy
 
 ## Question Details
 - Concept: Structures and member access

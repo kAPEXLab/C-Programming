@@ -1,4 +1,4 @@
-# 03 - Device Mode Config - Hard
+# 33 - Device Mode Config - Hard
 
 ## Question Details
 - Concept: typedef, enum, and union used together in a device-control model

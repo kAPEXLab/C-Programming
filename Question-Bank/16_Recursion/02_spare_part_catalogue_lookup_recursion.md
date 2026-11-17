@@ -1,4 +1,4 @@
-# 35 - Spare-Part Catalogue Lookup - Medium
+# 47 - Spare-Part Catalogue Lookup - Medium
 
 ## Question Details
 - Concept: Recursion, array indexing, and binary search

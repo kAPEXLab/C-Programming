@@ -1,4 +1,4 @@
-# 37 - Compile-Time Sensor Trace - Easy
+# 49 - Compile-Time Sensor Trace - Easy
 
 ## Question Details
 - Concept: Object-like macros and conditional compilation

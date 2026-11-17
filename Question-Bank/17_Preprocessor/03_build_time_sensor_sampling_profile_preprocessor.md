@@ -1,4 +1,4 @@
-# 39 - Build-Time Sensor Sampling Profile - Difficult
+# 51 - Build-Time Sensor Sampling Profile - Difficult
 
 ## Question Details
 - Concept: Preprocessor conditionals, object-like macros, and function-like macros

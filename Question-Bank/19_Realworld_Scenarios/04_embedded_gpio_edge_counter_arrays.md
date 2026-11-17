@@ -1,4 +1,4 @@
-# 04 - Embedded GPIO Edge Counter - Medium
+# 58 - Embedded GPIO Edge Counter - Medium
 
 ## Question Details
 - Concept: Arrays, loops, validation, and returning a structure

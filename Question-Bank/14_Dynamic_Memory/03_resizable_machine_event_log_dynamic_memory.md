@@ -1,4 +1,4 @@
-# 30 - Resizable Machine Event Log - Difficult
+# 42 - Resizable Machine Event Log - Difficult
 
 ## Question Details
 - Concept: Dynamic allocation, `realloc`, and pointer-to-pointer updates

@@ -1,4 +1,4 @@
-# 19 - Equipment Import Duty Calculation - Easy
+# 22 - Equipment Import Duty Calculation - Easy
 
 ## Question Details
 - Concept: Reusable functions and floating-point arithmetic

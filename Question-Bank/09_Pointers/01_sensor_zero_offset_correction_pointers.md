@@ -1,4 +1,4 @@
-# 22 - Sensor Zero-Offset Correction - Easy
+# 25 - Sensor Zero-Offset Correction - Easy
 
 ## Question Details
 - Concept: Pointers and in-place updates

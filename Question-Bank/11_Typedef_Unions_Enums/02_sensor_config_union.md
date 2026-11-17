@@ -1,4 +1,4 @@
-# 02 - Sensor Configuration Union - Medium
+# 32 - Sensor Configuration Union - Medium
 
 ## Question Details
 - Concept: typedef, union, and hardware configuration packing

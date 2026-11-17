@@ -1,4 +1,4 @@
-# 02 - Vibration Sample Predicate Callback - Medium
+# 35 - Vibration Sample Predicate Callback - Medium
 
 ## Question Details
 - Concept: Function pointers used as predicate callbacks

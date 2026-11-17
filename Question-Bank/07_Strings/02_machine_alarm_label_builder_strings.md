@@ -1,4 +1,4 @@
-# 17 - Machine Alarm Label Builder - Medium
+# 20 - Machine Alarm Label Builder - Medium
 
 ## Question Details
 - Concept: C strings, bounded copying, and concatenation

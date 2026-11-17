@@ -1,4 +1,4 @@
-# 07 - Embedded Cooling Fan Controller - Difficult
+# 61 - Embedded Cooling Fan Controller - Difficult
 
 ## Question Details
 - Concept: Structures, pointers, enumerated status values, validation, and state-dependent logic

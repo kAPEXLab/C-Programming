@@ -1,4 +1,4 @@
-# 23 - Redundant Sensor Source Selection - Medium
+# 26 - Redundant Sensor Source Selection - Medium
 
 ## Question Details
 - Concept: Pointers, pointer-to-pointer output, and validation

@@ -1,4 +1,4 @@
-# 20 - Batch Cooling-Agent Dose - Hard
+# 74 - Batch Cooling-Agent Dose - Hard
 
 ## Question Details
 - Concept: Standard library math functions, floating-point validation, and rounding

@@ -1,4 +1,4 @@
-# 05 - Enum Alarm Priority Dispatcher - Medium
+# 69 - Enum Alarm Priority Dispatcher - Medium
 
 ## Question Details
 - Concept: Enums, typedefs, switch logic, and structured dispatch

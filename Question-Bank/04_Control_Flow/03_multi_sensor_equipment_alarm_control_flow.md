@@ -1,4 +1,4 @@
-# 09 - Multi-Sensor Equipment Alarm - Difficult
+# 12 - Multi-Sensor Equipment Alarm - Difficult
 
 ## Question Details
 - Concept: Decision making, validation, and prioritized multi-condition rules

@@ -1,4 +1,4 @@
-# 19 - Equipment Downtime Duration - Medium
+# 73 - Equipment Downtime Duration - Medium
 
 ## Question Details
 - Concept: Standard library time types and `difftime`

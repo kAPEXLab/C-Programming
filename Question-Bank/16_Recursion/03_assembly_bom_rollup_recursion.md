@@ -1,4 +1,4 @@
-# 36 - Assembly Bill-of-Materials Roll-Up - Difficult
+# 48 - Assembly Bill-of-Materials Roll-Up - Difficult
 
 ## Question Details
 - Concept: Recursion over a hierarchy of structures

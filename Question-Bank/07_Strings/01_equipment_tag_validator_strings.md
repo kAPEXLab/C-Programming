@@ -1,4 +1,4 @@
-# 16 - Equipment Tag Validator - Easy
+# 19 - Equipment Tag Validator - Easy
 
 ## Question Details
 - Concept: C strings, character inspection, and terminating null characters

@@ -1,4 +1,4 @@
-# 02 - Automotive Vehicle Health Diagnostics - Medium
+# 56 - Automotive Vehicle Health Diagnostics - Medium
 
 ## Question Details
 - Concept: Structures, pointers, functions, conditional logic, and output parameters

@@ -1,4 +1,4 @@
-# 13 - Production Cycle-Time Batch Check - Easy
+# 16 - Production Cycle-Time Batch Check - Easy
 
 ## Question Details
 - Concept: Fixed-size arrays, accumulation, and min/max tracking

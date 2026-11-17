@@ -1,4 +1,4 @@
-# 01 - Motor Status Mask - Easy
+# 07 - Motor Status Mask - Easy
 
 ## Question Details
 - Concept: Bitwise operators, masks, and flag extraction

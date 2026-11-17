@@ -1,4 +1,4 @@
-# 34 - Maintenance Task-Hour Roll-Up - Easy
+# 46 - Maintenance Task-Hour Roll-Up - Easy
 
 ## Question Details
 - Concept: Recursion, base cases, and array traversal

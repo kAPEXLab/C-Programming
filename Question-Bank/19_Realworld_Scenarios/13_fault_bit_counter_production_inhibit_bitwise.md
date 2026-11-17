@@ -1,4 +1,4 @@
-# 13 - Fault Bit Counter and Production Inhibit - Hard
+# 67 - Fault Bit Counter and Production Inhibit - Hard
 
 ## Question Details
 - Concept: Bitwise masking, bit counting, and mask validation

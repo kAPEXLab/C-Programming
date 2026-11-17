@@ -1,4 +1,4 @@
-# 20 - Functions - Medium
+# 23 - Functions - Medium
 
 ## Question Details
 - Concept: Functions

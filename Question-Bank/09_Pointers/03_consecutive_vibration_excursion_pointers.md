@@ -1,4 +1,4 @@
-# 24 - Consecutive Vibration Excursion - Difficult
+# 27 - Consecutive Vibration Excursion - Difficult
 
 ## Question Details
 - Concept: Pointers, pointer traversal, and output parameters

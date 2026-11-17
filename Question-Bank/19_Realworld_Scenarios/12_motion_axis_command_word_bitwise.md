@@ -1,4 +1,4 @@
-# 12 - Motion Axis Command Word - Medium
+# 66 - Motion Axis Command Word - Medium
 
 ## Question Details
 - Concept: Bitwise shifts, masks, and command-word encoding

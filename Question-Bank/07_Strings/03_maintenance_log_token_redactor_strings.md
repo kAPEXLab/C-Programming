@@ -1,4 +1,4 @@
-# 18 - Maintenance Log Token Redactor - Difficult
+# 21 - Maintenance Log Token Redactor - Difficult
 
 ## Question Details
 - Concept: Strings, token boundaries, output sizing, and controlled copying

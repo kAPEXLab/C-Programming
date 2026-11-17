@@ -1,4 +1,4 @@
-# 28 - Sensor Sample Buffer Allocation - Easy
+# 40 - Sensor Sample Buffer Allocation - Easy
 
 ## Question Details
 - Concept: Dynamic memory allocation and pointer-to-pointer output

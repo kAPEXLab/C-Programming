@@ -1,4 +1,4 @@
-# 03 - Thermal Run-Up Detector - Medium
+# 57 - Thermal Run-Up Detector - Medium
 
 ## Question Details
 - Concept: Arrays, loops, adjacent-sample comparison, and output parameters

@@ -1,4 +1,4 @@
-# 07 - Vibration Operating Band - Easy
+# 10 - Vibration Operating Band - Easy
 
 ## Question Details
 - Concept: Decision making with ordered conditions

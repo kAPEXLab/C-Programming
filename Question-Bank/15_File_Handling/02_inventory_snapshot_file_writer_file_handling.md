@@ -1,4 +1,4 @@
-# 32 - Inventory Snapshot File Writer - Medium
+# 44 - Inventory Snapshot File Writer - Medium
 
 ## Question Details
 - Concept: File streams, formatted output, and error checking

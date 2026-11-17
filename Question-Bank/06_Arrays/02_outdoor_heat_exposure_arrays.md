@@ -1,4 +1,4 @@
-# 14 - Outdoor Work Heat-Exposure Counter - Medium
+# 17 - Outdoor Work Heat-Exposure Counter - Medium
 
 ## Question Details
 - Concept: Fixed-size arrays, loops, and consecutive-condition tracking

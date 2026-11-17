@@ -1,4 +1,4 @@
-# 03 - Fault Register Decoder - Hard
+# 09 - Fault Register Decoder - Hard
 
 ## Question Details
 - Concept: Bitwise decoding and fault prioritization

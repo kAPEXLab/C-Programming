@@ -1,4 +1,4 @@
-# 33 - Production Log Severity Scanner - Difficult
+# 45 - Production Log Severity Scanner - Difficult
 
 ## Question Details
 - Concept: File reading, parsing, aggregation, and error handling

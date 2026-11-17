@@ -1,4 +1,4 @@
-# 01 - Sensor Alarm Enum - Easy
+# 31 - Sensor Alarm Enum - Easy
 
 ## Question Details
 - Concept: Enum types and status mapping

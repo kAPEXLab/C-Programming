@@ -1,4 +1,4 @@
-# 40 - Maintenance Diagnostic Options - Easy
+# 52 - Maintenance Diagnostic Options - Easy
 
 ## Question Details
 - Concept: Command-line arguments and argument-count validation

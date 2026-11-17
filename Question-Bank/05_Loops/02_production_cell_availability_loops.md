@@ -1,4 +1,4 @@
-# 11 - Production Cell Availability Pattern - Medium
+# 14 - Production Cell Availability Pattern - Medium
 
 ## Question Details
 - Concept: Loops, character sequences, and consecutive-state tracking

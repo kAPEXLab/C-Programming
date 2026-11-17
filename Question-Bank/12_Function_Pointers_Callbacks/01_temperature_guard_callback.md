@@ -1,4 +1,4 @@
-# 01 - Temperature Guard Callback - Easy
+# 34 - Temperature Guard Callback - Easy
 
 ## Question Details
 - Concept: Function pointers and simple callback invocation

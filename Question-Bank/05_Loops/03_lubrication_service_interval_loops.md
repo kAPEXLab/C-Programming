@@ -1,4 +1,4 @@
-# 12 - Lubrication Service Interval Counter - Difficult
+# 15 - Lubrication Service Interval Counter - Difficult
 
 ## Question Details
 - Concept: Loops, repeated accumulation, and input validation
